@@ -1,0 +1,156 @@
+//slot頁
+.slotWrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    //slot上選單
+    .slotHeader {
+        width: 100%;
+        height: 80px;
+        box-sizing: border-box;
+        padding: 0 4%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        //選單
+        .listBox {
+            width: 100%;
+            height: auto;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 8px;
+                padding: 0 2%;
+                box-sizing: border-box;
+
+                li {
+                    font-size: 13px;
+                    font-weight: bold;
+                    padding: 5px 1.33vw;
+                    color: $font-color_2;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: solid 2px transparent;
+                    
+                    &.active {
+                        color: $font-color_3;
+                        border-color: $borderColor_3;
+                    }
+
+                    i {
+                        display: block;
+                        width: 13px;
+                        height: 13px;
+                        margin-right: 5px;
+
+                        &.hot_ic {
+                            height: 16px;
+                        }
+
+                        &.love_ic {
+                            margin-bottom: -4px;
+                        }
+                    }
+                }
+            }
+        }
+
+        //搜尋列
+        .searchBox {
+            width: 100%;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            background: $backgroundColor_4;
+            border: solid 1px $borderColor_4;
+            box-sizing: border-box;
+            padding: 4px 10px 4px 15px;
+            border-radius: 28px;
+            margin-bottom: 5px;
+
+            .search_ic {
+                display: block;
+                width: 15px;
+                height: 15px;
+            }
+
+            input {
+                width: 100%;
+                height: auto;
+                @include inputStyle_2;
+            }
+        }
+    }
+
+    //slot遊戲列
+    .gameList {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 8px;
+        margin: 0 auto;
+        padding: 0 14px;
+        align-content: flex-start;
+
+        .gameBox {
+            width: auto;
+            height: auto;
+            border: solid 1px $borderColor_4;
+            border-radius: 1.5vw;
+            overflow: hidden;
+            position: relative;
+            font-size: 0px;
+
+            p {
+                width: 100%;
+                height: 8vw;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 0 15px;
+
+                span {
+                    width: 75%;
+                    color: $font-color_14;
+                    font-size: 3.7vw;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                .love {
+                    width: 4vw;
+                    height: 4vw;
+                }
+            }
+
+            .btnBox {
+                width: 100%;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                box-sizing: border-box;
+                padding: 0 5px 5px;
+
+                button {
+                    width: 100%;
+                    height: 7vw;
+                    @include buttonStyle_4;
+
+                    &.try {
+                        @include buttonStyle_4_2;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
